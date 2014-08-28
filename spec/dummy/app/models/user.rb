@@ -4,4 +4,9 @@ class User < ActiveRecord::Base
   # :registerable
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def is_docs_admin?
+    self.email == "mingliangfeng@gmail.com"
+  end
+  
 end

@@ -1,2 +1,2 @@
-<h1>Docs#index</h1>
-<p>List all documents for user [<%= devise_resource.email %>]</p>
+<h1>Current user is admin user? <%= current_docs_user.is_docs_admin? %></h1>
+<p>List all documents for user [<%= current_docs_user.smart_name %>]</p>

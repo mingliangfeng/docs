@@ -12,7 +12,11 @@ module Docs
     def devise_resource
       self.send "current_#{devise_resource_name}".to_sym
     end
-    helper_method :devise_resource
+
+    def current_docs_user
+      @current_docs_user ||= Docs::User.new(devise_resource)
+    end
+    helper_method :current_docs_user
 
     def devise_resource_name
       Docs.devise_resource_name
