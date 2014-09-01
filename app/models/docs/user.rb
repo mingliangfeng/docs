@@ -18,5 +18,9 @@ module Docs
       false
     end
 
+    def last_sign_in_at
+      return host_user.last_sign_in_at if host_user.respond_to?(:last_sign_in_at)
+    end
+
   end
 end

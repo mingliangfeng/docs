@@ -1,4 +1,4 @@
 Docs::Engine.routes.draw do
-  get '' => 'docs#index'
+  root to: 'docs#index'
 
 end

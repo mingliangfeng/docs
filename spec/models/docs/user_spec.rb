@@ -21,5 +21,12 @@ module Docs
       allow(@host_user).to receive(:is_docs_admin?).and_return true
       expect(@user.is_docs_admin?).to be true
     end
+
+    it "Docs::user last login date" do
+      expect(@user.last_sign_in_at).to be nil
+
+      allow(@host_user).to receive(:last_sign_in_at).and_return DateTime.now
+      expect(@user.last_sign_in_at).to be @host_user.last_sign_in_at
+    end
   end
 end

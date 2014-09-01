@@ -19,7 +19,8 @@ module Docs
     helper_method :current_docs_user
 
     def devise_resource_name
-      Docs.devise_resource_name
+      (Docs.devise_resource_name || 'user').to_sym
     end
+    helper_method :devise_resource_name
   end
 end

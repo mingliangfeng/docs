@@ -5,6 +5,7 @@ module Docs
 
     describe "GET index" do
       it "redirect if no devise user logined" do
+        allow(controller).to receive(:new_session_path).and_return('/')
         get :index
         expect(response.status).to eq(302)
       end
