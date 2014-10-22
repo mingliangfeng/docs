@@ -1,6 +1,6 @@
 (($)->
-  $.fn.categoryTree = ->
-    $root = $('.sidebar-menu > .category-view')
+  $.fn.folderTree = ->
+    $root = $('.sidebar-menu > .folder-view')
     @.each ->
       $that = $(@)
       btn = $that.children("a").first()
@@ -32,7 +32,7 @@
           btn.children(".fa-folder").first().removeClass("fa-folder").addClass("fa-folder-open")
 
       btn.children('i.fa-caret-down').click (e)->
-        $(@).trigger 'category-menu:show', $(@).parent().data('folder-id')
+        $(@).trigger 'folder-menu:show', $(@).parent().data('folder-id')
         e.preventDefault()
         e.stopPropagation()
 
@@ -63,28 +63,27 @@
 
 )(jQuery)
 
-$category_menu = $('#category-menu')
+$folder_menu = $('#folder-menu')
 
-showCategoryMenu = (target, folder_id)->
+showFolderMenu = (target, folder_id)->
   $trigger_ele = $(target)
   $trigger_ele.parent().addClass('menu-show')
-  $category_menu.data 'trigger-folder', $trigger_ele.parent()
+  $folder_menu.data 'trigger-folder', $trigger_ele.parent()
   offset = $trigger_ele.offset()
-  $category_menu.css top: '', left: '', bottom: '', right: ''
+  $folder_menu.css top: '', left: '', bottom: '', right: ''
   top = offset.top + $trigger_ele.height() - 50 + 5
   left = offset.left
-  $category_menu.css top: top, left: left
-  $category_menu.show()
+  $folder_menu.css top: top, left: left
+  $folder_menu.show()
 
-hideCategoryMenu = ->
-  $category_menu.data('trigger-folder').removeClass 'menu-show'
-  $category_menu.hide()
+hideFolderMenu = ->
+  $folder_menu.data('trigger-folder').removeClass 'menu-show'
+  $folder_menu.hide()
 
 $(window).mouseup ->
-  hideCategoryMenu()
+  hideFolderMenu()
 
-$(".sidebar .category-view").categoryTree()
+$(".sidebar .folder-view").folderTree()
 $(".sidebar .type-view").typeTree()
-$('.category-view > a > i.fa-caret-down').on 'category-menu:show', (e, folder_id)->
-  showCategoryMenu e.target, folder_id
-  
+$('.folder-view > a > i.fa-caret-down').on 'folder-menu:show', (e, folder_id)->
+  showFolderMenu e.target, folder_id
