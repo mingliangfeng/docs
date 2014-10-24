@@ -2,6 +2,8 @@ module Docs
   class Engine < ::Rails::Engine
     require 'jquery-rails'
     require 'coffee-rails'
+    require 'acts-as-taggable-on'
+    require 'paperclip'
     isolate_namespace Docs
 
     config.generators do |g|

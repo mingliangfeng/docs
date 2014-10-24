@@ -1,0 +1,16 @@
+<li class="folder-view">
+  <a href="javascript:void(0)" data-folder-id="<%= folder.id %>">
+    <% if folder.has_sub_folders? %>
+    <i class="fa fa-folder"></i>
+    <% else %>
+    <i class="fa fa-folder-o"></i>
+    <% end %>
+    <span><%= folder.name %></span>
+    <i class="fa fa-caret-down"></i>
+    <ul class="treeview-menu">
+      <% folder.sub_folders.each do |folder| %>
+        <%= render partial: '/docs/shared/folder', locals: { folder: folder } %>
+      <% end %>
+    </ul>
+  </a>
+</li>

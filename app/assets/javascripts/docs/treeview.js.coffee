@@ -80,8 +80,7 @@ hideFolderMenu = ->
   $folder_menu.data('trigger-folder').removeClass 'menu-show'
   $folder_menu.hide()
 
-$(window).mouseup ->
-  hideFolderMenu()
+$(window).mouseup -> hideFolderMenu()
 
 $(".sidebar .folder-view").folderTree()
 $(".sidebar .type-view").typeTree()

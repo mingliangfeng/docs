@@ -23,9 +23,50 @@
         <i class="fa fa-caret-down"></i>
       </a>
       <ul class="treeview-menu">
-        <% Docs::Folder.root_folder.sub_folders.each do |folder| %>
-        <%= render partial: '/docs/shared/folder', locals: { folder: folder } %>
-        <% end %>
+        <li class="folder-view">
+          <a href="pages/charts/morris.html" data-folder-id="3">
+            <i class="fa fa-folder-o"></i>
+            <span>Health</span>
+            <i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+        <li class="folder-view">
+          <a href="pages/charts/morris.html">
+            <i class="fa fa-folder-o"></i>
+            <span>Motor</span>
+            <i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+        <li class="folder-view">
+          <a href="#">
+            <i class="fa fa-folder"></i>
+            <span>what will hapen if this isssff just big </span>
+            <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li class="folder-view">
+              <a href="pages/charts/morris.html">
+                <i class="fa fa-folder-o"></i>
+                <span>Laptops</span>
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </li>
+            <li class="folder-view">
+              <a href="pages/charts/morris.html">
+                <i class="fa fa-folder-o"></i>
+                <span>PCs</span>
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </li>
+            <li class="folder-view">
+              <a href="pages/charts/morris.html">
+                <i class="fa fa-folder-o"></i>
+                <span>Tablets</span>
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li class="type-view">

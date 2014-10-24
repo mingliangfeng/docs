@@ -24,6 +24,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'less-rails'
   s.add_dependency 'execjs'
   s.add_dependency 'therubyracer'
+  s.add_dependency 'acts-as-taggable-on', '~> 3.4'
+  s.add_dependency "paperclip", "~> 4.2"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency 'rspec-rails', '~> 3.0.0'
